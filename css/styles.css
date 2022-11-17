@@ -188,3 +188,12 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+
+.product-card{
+cursor: pointer;
+}
+
+.imgArticulo{
+  max-width: 110px;
+}

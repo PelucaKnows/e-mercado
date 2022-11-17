@@ -29,18 +29,136 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#" onclick="logout()">Cerrar sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="text-center p-4">
+        <h2>Carrito de compras</h2>
+    </div>
+    <h3>Artículos</h3>
+    <div id="articulos">
+    </div>
+    <br>
+    <h3>Tipo de envio</h3>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="tipoDeEnvio" onclick="refreshCosts(0.15)" id="delivery1">
+        <label class="form-check-label" for="delivery1">Premium 2 a 5 días (15%)</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="tipoDeEnvio" onclick="refreshCosts(0.07)" id="delivery2">
+        <label class="form-check-label" for="delivery2">Express 5 a 8 días (7%)</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="tipoDeEnvio" onclick="refreshCosts(0.05)" id="delivery3">
+        <label class="form-check-label" for="delivery3">Standard 12 a 15 días (5%)</label>
+    </div>
+    <br>
+    <h3>Dirección de envío</h3>
+    <form class="row g-3 needs-validation" novalidate >
+        <div class="form-group col-md-6">
+            <label class="form-label" for="calle">Calle</label>
+            <input type="text" class="form-control" id="street" required placeholder="Calle ej: Gaboto">
+            <div class="invalid-feedback">
+              Proporciona una calle válida.
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="numero">Número</label>
+            <input type="text" class="form-control" id="number" required placeholder="Numero ej: 2401">
+            <div class="invalid-feedback">
+              Proporciona una calle válida.
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="esquina">Esquina</label>
+            <input type="text" class="form-control " id="cross" required placeholder="Ejido">
+            <div class="invalid-feedback">
+              Proporciona una calle válida.
+            </div>
+        </div>
+      </form>
+        <br>
+        <h3>Costos</h3>
+            <div id="costos">
+            </div>
+          <h3>Forma de Pago</h3>
+          <div class="input-group mb-3 is-invalid">
+          <div id="payType">
+            Seleccione medio de pago
+          </div>
+          <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Seleccionar
+          </button>
+          <div class="invalid-feedback bg-danger" id="errorModal">
+           Debe seleccionar un medio de pago
+           </div>
+          </div>
+          <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title fs-1" id="staticBackdropLabel">Forma de Pago</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentType" id="flexRadioDefault1" onclick="paymentType('creditcard')">
+          <label class="form-check-label" for="creditcard">
+            Tarjeta de Crédito
+          </label>
+        </div>
+        <hr>
+        <div class="row">
+        <div class="col-md-6">
+          <label class="form-label">Número Tarjeta</label>
+          <input type="text" class="form-control" id="cc-number" disabled placeholder required autocomplete="off">
+        </div>
+        <div class="col-md-3">
+          <label for="cc-cvv" class="form-label">CCV</label>
+          <input type="text" class="form-control" id="cc-cvv" disabled placeholder required>
+        </div>
+      </div>
+        <div class="col-md-3">
+          <label for="cc-expiration" class="form-label">Vencimiento(MM/AA)</label>
+          <input type="text" class="form-control" id="cc-expiration" disabled placeholder required>
+        </div> 
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentType" id="flexRadioDefault2" onclick="paymentType('transfer')">
+          <label class="form-check-label" for="transfer">
+            Transferencia Bancaria
+          </label>
+        </div>
+        <hr>
+        <div class="col-md-6">
+          <label for="ac-number" class="form-label">Número de Cuenta</label>
+          <input type="text" class="form-control" id="ac-number" disabled placeholder required autocomplete="off">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
+  </div>
+</div>
+
+<button class="w-100 btn btn-primary btn btn-lg"  onclick="finalizarCompra()" type="submit">Finalizar compra</button>
   </main>
   <footer class="text-muted">
     <div class="container">

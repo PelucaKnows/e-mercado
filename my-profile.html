@@ -44,18 +44,57 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#" onclick="logout()">Cerrar sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <br>
+      <h2>Perfil</h2>
+      <form class="row g-3 needs-validation" novalidate >
+        <div class="form-group col-md-6">
+        <label for="firstName">Nombre</label>
+        <input type="text" class="form-control data-profile" id="name1" required placeholder="Ej. Peter">
+        </div>
+        <div class="form-group col-md-6">
+      <label for="secondName">Segundo nombre</label>
+      <input type="text" class="form-control data-profile" id="name2"  placeholder="Ej. Josh">
+        </div>
+        <div class="form-group col-md-6">
+      <label for="firstSurname">Apellido</label>
+      <input type="text" class="form-control data-profile" id="surname1" required placeholder="Ej. Carter">
+        </div>
+      <div class="form-group col-md-6">
+      <label for="secondSurname">Segundo apellido</label>
+      <input type="text" class="form-control data-profile" id="surname2" placeholder="Ej. Cash">
       </div>
+      <div class="form-group col-md-6">
+      <label for="email">email</label>
+      <input type="text" class="form-control data-profile" id="emailProfile" required>
+      </div>
+      <div class="form-group col-md-6">
+      <label for="contact">Teléfono de contacto</label>
+      <input type="text" class="form-control data-profile" id="contact" placeholder="Ej. 099-949-247">
+      </div>
+      <br>
+      <input type="button" class="btn btn-lg btn-primary btn-block col-md-3" onclick="saveProfileInfo()"  value="Guardar cambios">
+      <div class="alert alert-danger fade " id="alert-error" role="alert">
+        Los campos Nombre, Apellido y Email son obligatorios!
     </div>
+  </form>
+    </div>
+    
   </main>
   <footer class="text-muted">
     <div class="container">
