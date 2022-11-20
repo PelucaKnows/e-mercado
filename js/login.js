@@ -1,4 +1,4 @@
-function autenticar(event) {
+/*function autenticar(event) {
   event.preventDefault();//para que no se recargue
   let email = document.getElementById("email");
   let password = document.getElementById("password");
@@ -11,7 +11,7 @@ function autenticar(event) {
   }
   const forms = document.getElementsByClassName("needs-validation");
   forms[0].classList.add("was-validated");
-}
+}*/
 /////////////////////////////LOGIN GOOGLE
 
 
@@ -66,4 +66,3 @@ signInWithPopup(auth, provider)
     // ...
   });
 
-  
