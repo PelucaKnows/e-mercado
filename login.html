@@ -22,6 +22,7 @@
             text-align: center;
           }
   </style>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 
 <body>
@@ -50,8 +51,23 @@
         </div>
         <!-- botón-->
         <input type="submit" class="btn btn-primary btn-block mb-4" value="Ingresar">
+         <!--Autenticación Google-->
+    <div id="g_id_onload"
+    data-client_id="518048974412-22p5g9esfcbe89686iurunjug5lhpkqm.apps.googleusercontent.com"
+    data-callback="handleCredentialResponse"
+    data-auto_prompt="true">
+ </div>
+ <div class="g_id_signin"
+    data-type="standard"
+    data-size="large"
+    data-theme="filled_black"
+    data-text="sign_in_with"
+    data-shape="rectangular"
+    data-logo_alignment="left">
+ </div>
       </div>
     </div>
+   
   </main>
   <footer class="text-muted">
     <div class="container">

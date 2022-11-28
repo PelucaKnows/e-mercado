@@ -1,4 +1,4 @@
-/*function autenticar(event) {
+function autenticar(event) {
   event.preventDefault();//para que no se recargue
   let email = document.getElementById("email");
   let password = document.getElementById("password");
@@ -11,14 +11,39 @@
   }
   const forms = document.getElementsByClassName("needs-validation");
   forms[0].classList.add("was-validated");
-}*/
+}
 /////////////////////////////LOGIN GOOGLE
 
+function handleCredentialResponse(response) {
+  // decodeJwtResponse() is a custom function defined by you
+  // to decode the credential response.
+  const responsePayload = decodeJwtResponse(response.credential);
+
+ /* console.log("ID: " + responsePayload.sub);
+  console.log('Full Name: ' + responsePayload.name);
+  console.log('Given Name: ' + responsePayload.given_name);
+  console.log('Family Name: ' + responsePayload.family_name);
+  console.log("Image URL: " + responsePayload.picture);
+  console.log("Email: " + responsePayload.email);*/
+  sessionStorage.setItem("user", responsePayload.email);
+
+  sessionStorage.setItem("login", true);
+  window.location = "index.html"
+}
+
+function decodeJwtResponse (token) {
+  let base64Url = token.split('.')[1];
+  let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  let jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
+}
 
 
 
-
-
+/*
 
 import { GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
 
@@ -66,3 +91,4 @@ signInWithPopup(auth, provider)
     // ...
   });
 
+*/

@@ -197,3 +197,12 @@ cursor: pointer;
 .imgArticulo{
   max-width: 110px;
 }
+
+
+
+.imageProfile{
+  border-radius: 8px;
+  padding: 5px;
+  width: 200px;
+  align-items: flex-end;
+}

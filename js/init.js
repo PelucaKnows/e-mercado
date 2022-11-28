@@ -9,7 +9,24 @@ const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_INFO_URL25801 = "https://japceibal.github.io/emercado-api/user_cart/25801.json";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
-//Mientras no loguee no va a index
+
+
+/*const CATEGORIES_URL = "http://localhost:3000/cats/cat.json";//mira
+const PUBLISH_PRODUCT_URL =
+  "http://localhost:3000/sell/publish.json";
+const PRODUCTS_URL = "http://localhost:3000/cats_products/";
+const PRODUCT_INFO_URL = "http://localhost:3000/products/";
+const PRODUCT_INFO_COMMENTS_URL =
+  "http://localhost:3000/products_comments/";
+const CART_INFO_URL = "http://localhost:3000/user_cart/";
+const CART_INFO_URL25801 = "http://localhost:3000/user_cart/25801.json";
+const CART_BUY_URL = "http://localhost:3000/cart/buy.json";
+const EXT_TYPE = ".json";
+*/
+
+
+
+//Mientras no loguee no va a index/*
 let passedThroughLogin = sessionStorage.getItem("login");
 
 

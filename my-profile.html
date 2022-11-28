@@ -1,114 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-              <li><a class="dropdown-item" href="#" onclick="logout()">Cerrar sesión</a></li>
-            </ul>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              ></button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" onclick="logout()"
+                    >Cerrar sesión</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <br />
+        <h2>Perfil</h2>
+          <img class="rounded float-end" id="imageProfile">
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="form-group col-md-6">
+            <label for="firstName">Nombre</label>
+            <input
+              type="text"
+              class="form-control data-profile"
+              id="name1"
+              required
+              placeholder="Ej. Peter"
+            />
           </div>
-        </ul>
+          <div class="form-group col-md-6">
+            <label for="secondName">Segundo nombre</label>
+            <input
+              type="text"
+              class="form-control data-profile"
+              id="name2"
+              placeholder="Ej. Josh"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="firstSurname">Apellido</label>
+            <input
+              type="text"
+              class="form-control data-profile"
+              id="surname1"
+              required
+              placeholder="Ej. Carter"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="secondSurname">Segundo apellido</label>
+            <input
+              type="text"
+              class="form-control data-profile"
+              id="surname2"
+              placeholder="Ej. Cash"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="email">email</label>
+            <input
+              type="text"
+              class="form-control data-profile"
+              id="emailProfile"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="contact">Teléfono de contacto</label>
+            <input
+              type="text"
+              class="form-control data-profile"
+              id="contact"
+              placeholder="Ej. 099-949-247"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Imagen de perfil</label>
+            <input class="form-control" type="file" id="formFile" />
+          </div>
+          <br />
+          <input
+            type="button"
+            class="btn btn-lg btn-primary btn-block col-md-3"
+            onclick="saveProfileInfo()"
+            value="Guardar cambios"
+          />
+          <div class="alert alert-danger fade" id="alert-error" role="alert">
+            Los campos Nombre, Apellido y Email son obligatorios!
+          </div>
+        </form>
       </div>
-    </div>
-  </nav>
-  <main>
-    <div class="container">
-      <br>
-      <h2>Perfil</h2>
-      <form class="row g-3 needs-validation" novalidate >
-        <div class="form-group col-md-6">
-        <label for="firstName">Nombre</label>
-        <input type="text" class="form-control data-profile" id="name1" required placeholder="Ej. Peter">
-        </div>
-        <div class="form-group col-md-6">
-      <label for="secondName">Segundo nombre</label>
-      <input type="text" class="form-control data-profile" id="name2"  placeholder="Ej. Josh">
-        </div>
-        <div class="form-group col-md-6">
-      <label for="firstSurname">Apellido</label>
-      <input type="text" class="form-control data-profile" id="surname1" required placeholder="Ej. Carter">
-        </div>
-      <div class="form-group col-md-6">
-      <label for="secondSurname">Segundo apellido</label>
-      <input type="text" class="form-control data-profile" id="surname2" placeholder="Ej. Cash">
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>
+          Este sitio forma parte de
+          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+            >Jovenes a Programar</a
+          >
+          - 2022
+        </p>
+        <p>
+          Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
+          letra del obligatorio.
+        </p>
       </div>
-      <div class="form-group col-md-6">
-      <label for="email">email</label>
-      <input type="text" class="form-control data-profile" id="emailProfile" required>
-      </div>
-      <div class="form-group col-md-6">
-      <label for="contact">Teléfono de contacto</label>
-      <input type="text" class="form-control data-profile" id="contact" placeholder="Ej. 099-949-247">
-      </div>
-      <br>
-      <input type="button" class="btn btn-lg btn-primary btn-block col-md-3" onclick="saveProfileInfo()"  value="Guardar cambios">
-      <div class="alert alert-danger fade " id="alert-error" role="alert">
-        Los campos Nombre, Apellido y Email son obligatorios!
-    </div>
-  </form>
-    </div>
-    
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
-        2022</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
-</body>
-
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/my-profile.js"></script>
+  </body>
 </html>

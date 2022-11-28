@@ -2,7 +2,24 @@
     const surname1 = document.getElementById("surname1")
     const email = document.getElementById("emailProfile")
     const error2 = document.getElementById("alert-error");
+    const loadImage = document.getElementById("formFile");
 
+
+    loadImage.addEventListener('change', ()=> {
+        const fr = new FileReader();
+        fr.readAsDataURL(loadImage.files[0]);
+
+        fr.addEventListener('load', () => {
+            const url = fr.result;
+            const img = document.getElementById("imageProfile");
+
+            img.src = url;
+           // console.log(url);
+           //document.getElementById("imageProfile").appendChild(img);
+           img.classList.add("imageProfile");
+           localStorage.setItem('profile-image', img.src);
+        })
+    })
 
 function saveProfileInfo(){
     
@@ -48,8 +65,23 @@ function printData(){
 }
 
 document.addEventListener("DOMContentLoaded", function (e){
+ 
     document.getElementById("emailProfile").value = sessionStorage.getItem("user");
-    printData();
+    const img = document.getElementById("imageProfile")
+   const uru = localStorage.getItem("profile-image");
+   if(uru === null){
+    img.display = 'none';
+
+   }else{
+    document.getElementById("imageProfile").src = localStorage.getItem("profile-image");
+    img.classList.add("imageProfile");
+   }
+    
+   
+    
+   
+   
+    
    
 })
 
